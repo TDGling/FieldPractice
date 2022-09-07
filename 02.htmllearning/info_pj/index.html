@@ -363,6 +363,17 @@
             <abbr> 줄임말 오버시 툴팁표시 (avvreviation)
                 -> 필수속성: title속성
                 (title속성은 툴팁을 쓰고 싶은 요소에 어디나 사용할 수 있다. abbr요소는 필수로 써야함)
+            
+            3. 주소표지
+            <address> - 주소, 대표자, 전화번호 등 정보표시 - 시맨틱
+
+            4. 작품명 인용
+            <cite> - 인용된 작품명 표시
+                
+            5. 글자역순표시(Bi-Directional Override)
+            <bdo>
+                dir="rtl"
+                -> right to left 즉, 오른쪽에서 왼쪽으로 표시
         -->
 
     <!-- 
@@ -431,6 +442,24 @@
         -툴팁을 나오게 하는 속성임
         -값으로 메시지를 넣으며 마우스 오버시 툴팁으로 메시지가 보인다.
         -공통) 어떤 오소에도 필요하면 사용가능함
+
+        ______________________________________________
+
+        [ 그룹 요소 ]
+        1. ui > li
+        -> 앞에 블릿은 CSS로 변경가능
+        (list-style-type:square/disc/circle)
+        참고)
+        https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ul_type_css
+
+        2. ol - 순서있는 리스트(ordered list)
+            ol > li
+            -> 앞에 숫자는 CSS로 혹은 type속성으로 변경가능
+        참고)
+        https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type_all_css
+        
+        -start 속성 : 시작번호
+        -reverse 속성 : 일련범호를 거꾸로 진행
      -->
 </body>
 </html>
