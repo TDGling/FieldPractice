@@ -50,11 +50,47 @@
 
              */
         /* h2요소 맨앞에 이미지 넣기 */
-        
+        h2::before{
+            /* 내용넣기 속성 content -> 필수  */
+            /* content: '나야나'; */
+            content: url(./imgs/blogo.png);
+            width: 20px;
+            height: 10px;
+            /* 이미지는 원본 그대로 사용해야함 가로,새로 크기를 번경하고 싶으면 박스로 만들고 배경이미지로 처리함 */
+
+            /* 마진 적용 mr */
+            margin-right: 20px;
+            /* 인라인요소간 새로정렬 va */
+            /* vertical-align: 값으로 top, middle, bottom, 숫자px, 등 */
+            vertical-align: top;
+        }
         /* 맨뒤 추가요소 ::after */
-       
-        
-        
+        h2::after{
+            content: '';
+            /* content 빈값은 마치 <span>태그를 쓴것과 비슷 */
+            display: inline-block;
+            /* display: block를 쓰면 <div>태그를 쓴 것과 비슷함 
+            그러나 여기서 디자인적용과 한줄에 오는 방법으로 inline-block을 씀 */
+            width: 40px;
+            height: 60px;
+            /* 인라인요소간 세로정렬 */
+            vertical-align: middle;
+            /* 왼쪽마진 ml:20 */
+            margin-left: 20px;
+            /* 배경 bg */
+            background: url(./imgs/bg_logo_a_01.png) no-repeat center/80%;
+            
+            /* 둥근모서리 brad */
+            border-radius: 5px;
+            /* 테두리 (보더) bd */
+            border: 2px solid #ccc;
+            /* 박스그림자 box-shadow (bsh): x y blur spread color */
+            /* 박스그림자 box-shadow : x위치 y위치 경계흐림 그림자크기 그림자색 */
+            /* 맨 앞에 inset을 쓰면 내부그림자 콤마로 구분하여 여러개의 그림자효과 가능! */
+            
+            box-shadow: inset 0 0 10px #b300c3c5,
+            10px 10px 5px 2px #00000067;
+        }
 
         /* dl요소 디자인 */
         dl {
@@ -66,37 +102,74 @@
         }
 
         /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
-             
+        dl dt::before{
+            content: '❤︎';
+            color: red;
+            font-size: 30px;
+        }
         
         /* dd전체와 
         dd.story>h3에 가상요소 before적용하기 */
+        dl dd::before,
+        dd.story>h3::before{
+            content: '😀';
+            /* 이모지는 윈도우키+점(.) */
+            font-size: 20px;
+            margin-right: 5px;
+            vertical-align: 2px;
+        }
         
 
         /* 출연배우의 dd부터 아이콘변경 */
-        
+        dl dd:nth-of-type(5)~dd::before{
+            content: '😍';
+        }
         /* 아티스트의 dd부터 아이콘변경 */
-        
+        dl dd:nth-of-type(10)~dd::before{
+            content: '😂';
+        }
 
         /* 스토리의 dd는 가상요소 없애기 */
+        dd.story::before{
+            display: none;
+        }
         
-        
+        /* .story의 dd 아래 h3 이모지변경 */
+        dd.story>h3::before{
+            content: '📣';
+        }
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
-        
+        dd.story p:first-of-type::first-letter{
+            font-size: 50px;
+            color: hotpink;
+            font-weight: bold;
+        }
         
 
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
-       
+       dd.story p:first-of-type::first-line{
+        color: blue;
+       }
         
         
 
         /* 두번째 p태그는 태그로 
         첫번째 글자(b태그), 첫번째 줄(span)변경 */
-        
-        
+        dd.story p:last-of-type b{
+            font-size: 50px;
+            color: hotpink;
+        }
+        dd.story p:last-of-type span{
+            color: blue;
+        }
         /* 기타 가상요소 ::selection */
         /* 드래그 선택시 글자색 배경색 설정변경! */
-        
-        
+        p::selection{
+            color: red;
+            background-color: yellow;
+        }
+        /* ::selection만 쓰면 전체가 다 적용됨
+        특정선택자::selection 으로 쓰면 태그로 싸지 않은 글자만 적용됨 */
 
     </style>
 </head>
