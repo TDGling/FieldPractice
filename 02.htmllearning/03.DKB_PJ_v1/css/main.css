@@ -27,8 +27,10 @@ body{
 
 /* ___2. 메인영역___ */
 .cont{
-    /* 높이값 h */
-    height: 969px;
+    /* 최소높이값 mh */
+    min-height: 969px;
+    /* 최소 높이는 내용이 없어도 설정된 크기를 유지하다가 내용이 많아지면 늘어난다 (많이 사용됨) */
+    
     /* 넘치는 자식요소숨기기 */
     overflow: hidden;
     /* why : 첫번째 자식요소 마진탑값이 부모요소 바깥으로 미는 기본특성이 있으므로 이것을 포함하기 위해 설정 */
@@ -40,8 +42,10 @@ body{
     width: 90%;
     /* 마.영.오 */
     margin: 0 auto;
-    /* 마진탑 mt */
+    /* 마진탑 mt: */
     margin-top: 500px;
+    /* 마진아래 mb: */
+    margin-bottom: 100px;
 }
 
 /* 자식요소의 float해제 설정 가상요소 ::after */
@@ -101,6 +105,61 @@ body{
 }
 
 /* 마우스 오버시 처리 2 - 마지막 이미지 숨기기 */
-.ci:hover .ci figcaption img:last-child{
+.cat:hover .ci figcaption img:last-child{
     display: none;
+}
+
+/* 캐릭터 설명박스 */
+.cd{
+    /* 높이값 설정 h */
+    height: 250px;
+    /* 넘치는 내용 요소 자동 스크롤 - ov:auto 설정 */
+    overflow: auto;
+    /* 
+        [ overflow 속성 ]
+        -> 넘치는 요소 처리속성
+        - visible 넘처도 보임(기본값)
+        - hidden 넘치는 요소 숨기기
+        - scroll 스크롤바 생성 (x,y 두방향 모두 생김 - overflow-y 로 해야 y만 생김)
+        - auto 내용 넘치면 자동으로 y축 스크롤만 생김
+    */
+
+    /* 마진 상단 mt */
+    margin-top: 15px;
+
+    /* 배경 : 색 이 반 고 위/크 */
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+}
+
+/* 'Gugi'
+'Single Day'
+'ZCOOL KuaiLe'
+ */
+/* 캐릭터 설명 타이틀 */
+.cd h3{
+    /* 글자체 ff - 웹폰트 */
+    font-family: 'Gugi';
+    /* 글자크기 fz */
+    font-size: 24px;
+    /* 글자두께 보통 fw:n */
+    font-weight: normal;
+    /* 패딩 p : 위 15px 양쪽 10px 아래 5px */
+    padding: 15px 10px 5px;
+    /* 자간 ls:-1 */
+    letter-spacing: -1px;
+}
+
+/* 캐릭터 설명 문단 */
+.cd p{
+    /* 글자체 ff */
+    font-family: 'Single Day', 'ZCOOL KuaiLe';
+    /* 글자크기 fz */
+    font-size: 18px;
+    /* 줄간격 lh:1.6 */
+    line-height: 1.6;
+    /* 패딩 p */
+    padding: 10px;
+    /* letter-spacing: 1px; - 필요하면 쓰기 */
+    /* 양쪽정렬 ta:justify */
+    text-align: justify;
 }
