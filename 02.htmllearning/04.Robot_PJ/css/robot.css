@@ -85,6 +85,8 @@ body{
     background: url(../images/nose.jpg) no-repeat 0/110% 100%;
     /* 둥근모서리 */
     border-radius: 30px;
+
+    clip-path: polygon(36% 10%,69% 10%,80% 60%,94% 70%,86% 90%,18% 90%,8% 74%,20% 60%);
 }
 .mouth{
     position: absolute;
@@ -127,7 +129,23 @@ body{
     margin: 0 auto;
     /* 마진상단 */
     margin-top: 50px;
+    /* 보더 하단 */
+    /* border-bottom: 20px solid #000; */
 
+}
+/* 가상요소로 몸박스 하단처리 */
+.body::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: -2%;
+    width: 104%;
+    height: 120px;
+    /* 선형 그라데이션 */
+    background-image: linear-gradient(#888,aqua,darkblue);
+    /* 다각형 클리핑(바지모양) */
+    clip-path: polygon(0 0,100% 0,100% 80%,70% 100%,30% 100%,0 80%);
 }
 /* 목 */
 .neck{
@@ -218,6 +236,13 @@ linear-gradient (방향/각도, 색1 비율% , 색2 비율% , 색3 비율% , ...
     height: 40px;
     background-color: #000;
     border-radius: 5px;
+    /* 클리핑 기법을 사용하여 그림자를 삼각형으로 만들자
+        -> 다각형 클리핑
+        clop-path : poltgon(x1 y1, x2 y2,...)
+        -> 소괄호를 비울 수 없다
+        -> 각 좌표는 x,y 좌표 하나는 띄어쓰기로 다른 좌표는 콤마로 구분한다.    
+    */
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
 }
 /* 왼손 그림자 위치 */
 .arm.a1::after{
@@ -249,6 +274,23 @@ linear-gradient (방향/각도, 색1 비율% , 색2 비율% , 색3 비율% , ...
     background-size: 100%;
     background-repeat: repeat-y;
 }
+/* 가상요소로 발만들기 */
+.leg::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: -6px;
+    width: 80px;
+    height: 40px;
+    /* 둥근모서리 위쪽만 둥굴게 */
+    border-radius: 30px 30px 0 0;
+    border-bottom: 20px solid #000;
+    /* 원형그라디언트 */
+    background-image: radial-gradient(farthest-side at 20px 20px, #fff, #333);
+    background-color: #fff;
+
+}
 /* 왼다리 */
 .l1{
     left: 0;
@@ -276,4 +318,38 @@ linear-gradient (방향/각도, 색1 비율% , 색2 비율% , 색3 비율% , ...
     right: -80px;
     /* 둥근모서리 오른위 오른아래 둥글게 */
     border-radius: 0 50% 50% 0;
+}
+/* TV */
+.tv{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 200px;
+    height: 130px;
+    background: url(../images/tv.jpg)no-repeat 0/100%;
+    border: 5px ridge lightblue;
+}
+/* 스크린 */
+.screen{
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    /* 부모는 .TV */
+    width: 139px;
+    height: 105px;
+    background-color: #000;
+    border-radius: 10px;
+    /* 넘치는 자식요소 숨기기 */
+    overflow: hidden;
+}
+/* 아이프레임 */
+.screen iframe{
+    position: absolute;
+    top: -5px;
+    left: -28px;
+    width: 139%;
+    height: 111%;
+    /* 기본보더없앰 */
+    border: none;
+    opacity: 0.7;
 }
