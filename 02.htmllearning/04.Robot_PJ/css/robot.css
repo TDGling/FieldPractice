@@ -159,10 +159,76 @@ body{
     height: 70px;
     /* 둥근모서리 : 원 */
     border-radius: 50%;
-    
-    background-color: yellow;
+    /* background-color: yellow; */
+    /* 선형 그라디에션 */
+    /* background-image: linear-gradient(red,blue); */
+    /* background-image: linear-gradient(to left,red 5%,blue 20%,blue 80%, yellow 5%); */
+    /* background-image: linear-gradient(45deg,red,blue,yellow); */
 
+    /* 원형 그라데이션 */
+    /* background-image: radial-gradient(red,blue,yellow); */
+    /* background-image: radial-gradient(circle,red,blue,yellow); */
+    background-image: radial-gradient(farthest-side at 40% 40%,white, #333);
 }
+/* 왼쪽가상요소 위치 */
+.arm.a1::before{
+    left: -15px;
+}
+/* 오른쪽가상요소 위치 */
+.arm.a2::before{
+    right: -15px;
+}
+
+/* 
+[ 배경이미지에 있는 그라데이션 ]
+background-image : 선형/원형 그라데이션 설정
+-background-lmage : liner-gradiet
+1. 선형 그라데이션
+linear-gradient (방향/각도, 색1 비율% , 색2 비율% , 색3 비율% , ...)
+1) 방향값 : to top / to bottom / to left / to right
+2) 각도값 : 숫자deg -> deg는 degree에서 나온말
+   -> 방향 또는 각도를 사용, to bottom이 기본값
+   -> 색상을 쓰고 뒤에 필요한 경우 비율을 사용
+   -> 색상 뒤에 비율을 안쓰면 등분할 됨
+
+2. 원형 그라데이션
+-background-image : radial-gradient(옵션,색1 비율%, 색2 비율%,...)
+1) 옵션 : circle - 원형, 안쓰면 박스크기에 맞춤
+2) 세밀한 옵션 : 특정 위치를 중심으로 빛반사효과
+      ->> 세부옵션 at 가로위치 세로위치
+      ->> 세부옵션 종류 :
+         1) closest - side
+         2) farthest - side
+         3) closest - corner
+         4) farthest -corner
+       예) background-image: radial-gradint(closest-sode at 30px 15px,white,blue)
+       ->가로, 세로 위치는 px / % 단위사용가능
+   -> 색상을 쓰고 뒤에 필요한 경우 비율을 사용
+   -> 색상 뒤에 비율을 안쓰면 등분할 됨
+
+*/
+
+/* 가상요소로 손그림자주기 */
+.arm::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -25px;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 5px;
+}
+/* 왼손 그림자 위치 */
+.arm.a1::after{
+    left: 12px;
+}
+
+/* 왼손 그림자 위치 */
+.arm.a2::after{
+    right: 12px;
+}
+
 /* 왼팔 */
 .a1{
     left: -60px;
