@@ -31,7 +31,7 @@ body{
     /* 패딩 위,아래 */
     padding: 200px 0 400px;
 }
-/* 2-1-1.로봇머리 */
+/* __________2-1-1.로봇머리__________ */
 .head{
     position: relative;
     /* 부모자격 */
@@ -39,12 +39,15 @@ body{
     height: 250px;
     /* 마.영.오 */
     margin: 0 auto;
+    /* 둥근모서리 : 왼위 오른위 오른아래 왼아래 (시계방향) */
+    border-radius: 50px 50px 0 0;
 }
 /* 눈공통 */
 .eye{
+    /* 배경색 bgc:fff */
+    background-color: #fff;
     /* 포지션 : 앱솔루트 */
     position: absolute;
-
     width: 50px;
     height: 50px;
     /* 배경공통 */
@@ -53,6 +56,10 @@ body{
     background-position: center;
     /* 배경크기 : 채움 */
     background-size: 100% 100%;
+    /* 둥근모서리 : border-redius :50% = 원 */
+    border-radius: 50%;
+    /* 보더 이중선 */
+    border: 4px double black;
 }
 /* 왼쪽눈 */
 .e1{
@@ -75,7 +82,9 @@ body{
     top: 100px;
     left: 100px;
 
-    background: url(../images/nose.jpg) no-repeat 0/100% 100%;
+    background: url(../images/nose.jpg) no-repeat 0/110% 100%;
+    /* 둥근모서리 */
+    border-radius: 30px;
 }
 .mouth{
     position: absolute;
@@ -88,3 +97,117 @@ body{
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
 }
 
+/* 귀 공통 */
+.ear{
+    position: absolute;
+    top: 80px;
+    width: 60px;
+    height: 90px;
+}
+/* 왼귀 */
+.er1{
+    left: -60px;
+    /* 둥근모서리 왼위 왼아래 30px */
+    border-radius: 30px 0 0 30px;
+}
+/* 오른 귀 */
+.er2{
+    right: -60px;
+    /* 둥근모서리: 오른위 오른아래만 30px */
+    border-radius: 0 30px 30px 0;
+}
+
+/* __________2-1-2. 로봇몸통__________ */
+.body{
+    position: relative;
+    /* 부모자격 - 자식요소 앱솔루트 */
+    width: 250px;
+    height: 310px;
+    /* 마.0.오 */
+    margin: 0 auto;
+    /* 마진상단 */
+    margin-top: 50px;
+
+}
+/* 목 */
+.neck{
+    position: absolute;
+    top: -50px;
+    left: 95px;
+    width: 60px;
+    height: 50px;
+}
+/* 팔 공통 */
+.arm{
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    /* 배경세팅변경 */
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 가상요소로 손 만들기 */
+.arm::before{
+    content: '';
+    /* 블록요소 느낌 */
+    display: block;
+    /* 앱솔루트 포지션 - 블록화 */
+    position: absolute;
+    bottom: -25px;
+
+    width: 70px;
+    height: 70px;
+    /* 둥근모서리 : 원 */
+    border-radius: 50%;
+    
+    background-color: yellow;
+
+}
+/* 왼팔 */
+.a1{
+    left: -60px;
+}
+/* 오른팔 */
+.a2{
+    right: -60px;
+}
+
+/* 다리공통 */
+.leg{
+    position: absolute;
+    top: 100%;
+    /* 부모높이값 만큼 100% 밀기 */
+    width: 70px;
+    height: 300px;
+    /* 배경세팅변경 */
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 왼다리 */
+.l1{
+    left: 0;
+}
+/* 오른다리 */
+.l2{
+    right: 0;
+}
+/* 어깨공통 */
+.shd{
+    position: absolute;
+    top: -20px;
+    width: 90px;
+    height: 80px;
+}
+/* 왼어깨 */
+.s1{
+    left: -80px;
+    /* 둥근모서리 왼위 왼 아래 둥글게 */
+    border-radius: 50% 0 0 50%;
+
+}
+/* 오른어깨 */
+.s2{
+    right: -80px;
+    /* 둥근모서리 오른위 오른아래 둥글게 */
+    border-radius: 0 50% 50% 0;
+}
