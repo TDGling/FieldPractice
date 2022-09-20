@@ -1,9 +1,17 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
 
+/* 웹폰트 cdn */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap');
+
+/* font-family: 'Barlow', sans-serif; */
+/* font-family: 'Black Ops One', cursive; */
+/* font-family: 'Chakra Petch', sans-serif; */
+/* font-family: 'Orbitron', sans-serif; */
+
 /* 공사중표시 */
 body *{
-    outline: 2px dashed lime;
+    /* outline: 2px dashed lime; */
 }
 
 /* 초기화 */
@@ -17,7 +25,7 @@ body{
     /* 배경: 색 이 반 고 위/크 */
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
 }
-/* 공통class */
+/* __________공통class__________ */
 /* 메탈소재1 배경 */
 .mt1{
     background: url(../images/metal01.jpg) no-repeat center/cover;
@@ -25,6 +33,12 @@ body{
 /* 메탈소재2 배경 */
 .mt2{
     background: url(../images/metal02.jpg) no-repeat center/cover;
+}
+/* 빛이나는 로봇 */
+.brRo, .brRo::after, .brRo::before{
+    /* 박스 그림자 : x y blur spread */
+    box-shadow: 0px 0px 10px 5px cyan;
+    /* 박스 그림자를 밝은 색으로 주면 빛나는 효과를 줄 수 있다. */
 }
 /* 2-1. 로봇박스 */
 .robx{
@@ -352,4 +366,120 @@ linear-gradient (방향/각도, 색1 비율% , 색2 비율% , 색3 비율% , ...
     /* 기본보더없앰 */
     border: none;
     opacity: 0.7;
+}
+/* __________2-2. 로봇설명박스__________ */
+.dcbx{
+    /* 최대가로크기 maw */
+    max-width: 800px;
+    /* 마.0.a */
+    margin: 0 auto;
+    /* 하단공간 */
+    margin-bottom: 200px;
+    /* 반투명 배경색 */
+    background-color: rgba(0, 0, 0, 0.514);
+    /* 글자색 */
+    color: #fff;
+    /* 글자그림자 ts */
+    text-shadow: 1px 1px 1px #000;
+    /* 패딩 p 위/아래 양쪽 */
+    padding: 15px 30px;
+    /* 경계선 : 두종색 */
+    border: 3px solid #fff;
+    /* 둥근모서리 */
+    background-repeat: 20px;
+    /* 박스그림자 콤마로 연결하면 다중셋팅 가능
+       - insset은 내부그림자 */
+    box-shadow: inset 0 0 20px darkblue;
+    box-shadow: inset 0 0 50px 10px cyan;
+    
+
+}
+
+/* 2-2--1. 로봇 제목 */
+.dcbx h2{
+    /* 글자체 */
+    font-family: 'barlow';
+    /* 글자중앙 */
+    text-align: center;
+    /* 글자크기 */
+    font-size: 35px;
+    /* 글자색 */
+    color: lime;
+    /* 백그라운드 컬러 */
+    background-color: rgba(255, 255, 255, 0.511);
+    /* 둥근모서리 */
+    border-radius: 20px;
+}
+/* 2-2-2. 로벗정보출처 */
+.dcbx small{
+    /* 글자체 */
+    font-family: 'Chakra Petch';
+    /* 블록으로 변경(텍스트중앙적용위해) */
+    display: block;
+    /* 텍스트중앙 */
+    text-align: center;
+    /* 글자색 */
+    color: #ff0;
+    /* 글자크기 */
+    font-size: 12px;
+    /* 패딩 */
+    padding: 10px;
+}
+/* 2-2-3. 설명문단 */
+.dcbx p{
+    /* 글자체 */
+    font-family: 'barlow';
+    /* 글자크기 */
+    font-size: 15px;
+    /* 줄간격 */
+    line-height: 1.8;
+    /* 자간 */
+    letter-spacing: 1px;
+    /* 단어간격 */
+    word-spacing: 2px;
+    
+    /* 가독성을 위한 다단설정 */
+    /* 다단표시(다중열속성) */
+    
+    /* 다중열 계수 */
+    column-count: 3;
+    /* 다중열 구분선 */
+    column-rule: 5px dotted lightblue;
+    /* 보더세팅과 유사함 : 두께 종류 색상 */
+
+    /* 다중열 시아간격 */
+    column-gap: 55px;
+    /* 양쪽정렬 justify */
+    text-align: justify;
+    /* 단어깨기 : break-all - 모든단어깨기 */
+    word-break: break-all;
+    /* 단어를 깨는 이유 : 단어단위로 줄바꿈이 되는 1byte 문자인 영어인 경우 단어단위로 무두 깨줘야 양쪽정렬시 중간 공백이 생기지 않는다.
+       (한글과 같은 2byte문자는 단어깨기를 안해도 모두 떨어진다. */
+
+    /* 첫글자 들여쓰기 ti */
+    text-indent: 20px;
+}
+/* 설명문단 첫글자 가상요소로 글자디자인 변경하기 */
+.dcbx p::first-letter{
+    /* 글자크기 */
+    font-size: 30px;
+    /* 글자두껍게 */
+    font-weight: bold;
+    /* 글자색 */
+    color: orange;
+}
+/* __________3.하단영역__________ */
+.info{
+    /* 패딩 */
+    padding: 50px;
+    /* 글자중앙 */
+    text-align: center;
+    /* 글자색 */
+    color: #fff;
+    /* 글자: 스 투 크/줄 체 */
+    font: 30px 'Black Ops One';
+    /* 글자그림자 */
+    text-shadow: 2px 2px 2px #000;
+    /* 배경색 검정반투명 */
+    background-color: rgba(0, 0, 0, 0.504);
 }
