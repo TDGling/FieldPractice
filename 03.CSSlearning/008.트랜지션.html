@@ -110,7 +110,7 @@
         /* #tr3에 트랜지션 설정 */
         #tr3 span{
             transition: all 5s ease-in-out 2s;
-            /* 모든 속성이 5초동안 처음과 마지막에 천천히 2초후 애니시작 */
+            /* 모든 속성이 5초동안 처음과 마지막에 천천히 2초후 애니시작 */
         }
         /* 오버시 트랜지션 별도 설정하기 */
         #tr3:hover span{
@@ -127,21 +127,36 @@
             속시이지 순으로 셋팅하고 콤마로 구분한다!
         */
         #tr4 span{
-            transition: left 5s ease-in-out,
-            /* left 속성을 5초간 처음과 마지막에 천천히 애니 */
+           /* 아웃시 트랜지션 -> 순서를 거꾸로 가도록 구성 */
+            transition: 
+            left 5s ease-in-out 5s,
+            /* left속성을 5초간 처음과 마지막에 천천히 5초후 애니 */
             background-color 2s ease-out 4s,
             /* 배경색 속성을 2초간 마지막에 천천히 4초후 애니 */
-            border-radius 3s linear 5s,
-            /* 둥근모서리 속성을 3초간 등속도로 5초후 애니 */
-            top 8s ease-in-out 8s;
-            /* top 속성을 1초간 처음과 마지막에 천천히 8초후 애니 */
+            border-radius 3s linear 1s,
+            /* 둥근모서리 속성을 3초간 등속도로 1초후 애니 */
+            top 1s ease-in-out;
+            /* top속성을 1초간 처음과 마지막에 천천히 애니 */
         }
+        /* #chk 체크박스 체크시 span 변경 */
+        /* :checked 가상클래스 사용하여 체크시 형제요소(+) 변경 */
         /* 오버시 span 변경 */
-        #tr4:hover span{
+        #chk:checked + span{
             left: 70%;
             background-color: darkorchid;
             border-radius: 0;
             top: -100px;
+
+            /* 오버시 트랜지션 */
+            transition: 
+            left 5s ease-in-out,
+            /* left속성을 5초간 처음과 마지막에 천천히 애니 */
+            background-color 2s ease-out 4s,
+            /* 배경색 속성을 2초간 마지막에 천천히 4초후 애니 */
+            border-radius 3s linear 5s,
+            /* 둥근모서리 속성을 3초간 등속도로 5초후 애니 */
+            top 1s ease-in-out 8s;
+            /* top속성을 1초간 처음과 마지막에 천천히 8초후 애니 */
         }
        
         
@@ -168,6 +183,9 @@
 
     <h2>4.원본에 트랜지션을 각 속성별로 다르게 준다</h2>
     <div id="tr4">
+        <label for="chk">체크하면 작동!</label>
+        <input type="checkbox" id="chk">
+        <!-- label은 input요소의 설명요소 - for속성은 input의 id와 연결됨(클릭시연결) -->
         <span></span>
     </div>
 </body>
