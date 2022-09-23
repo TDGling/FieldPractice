@@ -2,7 +2,8 @@
 /* 도깨비 PJ 공통모듈 CSS - common.css */
 /* 상단영역, 하단영역 반복디자인 */
 
-/* 1. 상단영역 */
+
+/************** 1. 상단영역 **************/
 /* 겉박스 */
 #top{
     /* 배경색 */
@@ -10,129 +11,113 @@
 }
 /* 속박스 */
 .top{
-    /* 레거티브 포지션 -부모자격( */
+    /* 레러티브 포지션 - 부모자격(.tmenu) */
     position: relative;
     height: 128px;
 }
-/* 1-1. 로고 */
+/* 1-1.로고 */
 .logo{
-    /* 이미지와 같은 widtd 셋팅 */
+    /* 이미지와 같은 width 셋팅 */
     width: 100px;
+    /* 마영오! */
     margin: 0 auto;
+    /* 패딩상단 */
     padding-top: 20px;
-
 }
 /* 로고이미지 */
 .logo img{
     width: 100px;
 }
-
-/* 1-2. GNB 메뉴 */
+/* 1-2.GNB메뉴 */
 .gnb{
-    /* 가로크기를 주고 마영오 적용 */
+    /* 가로크기를 주고 마영오적용! */
     width: 574px;
+    /* 마영오! */
     margin: 0 auto;
     /* 마진상단 */
     margin-top: 25px;
 }
-/* GMB 상위메뉴 li */
-.gnb>ul.li{
+/* GNB 상위메뉴 li */
+.gnb>ul>li{
     /* 패딩양쪽 */
     padding: 0 15px;
 }
 /* GNB 상위메뉴 a */
 .gnb>ul>li>a{
-    /* 글자세팅 */
+    /* 글자셋팅 */
     font-size: 17px;
-    line-height: 2.5px;
+    line-height: 2.5;
 }
 
-/* 1-3. SNS 메뉴 */
+/* 1-3.sns메뉴 */
 .tmenu{
-    /* 앱솔루트 포지션 */
+    /*  앱솔루트포지션 */
     position: absolute;
     top: 20px;
     right: 0;
-    
+    /* 부모는? .top */
 }
 
 
-/* 3. 하단영역 */
+/************** 3. 하단영역 **************/
 /* 겉박스 */
 #info{
     background-color: rgba(255, 255, 255, 0.765);
 }
 /* 속박스 */
 .info{
-    /* 레거티브 포지션- 부모자격( */
+    /* 레러티브 포지션 - 부모자격(.brand) */
     position: relative;
     height: 241px;
 }
-/* 하단링크 */
+/* 3-1. 하단링크 */
 .blink{
-    /* 패딩상단 */
+    /* 패딩상단 pt */
     padding-top: 5px;
 }
 /* 하단링크 리스트 */
 .blink ul{
-    /* 가로크기를 줘야 마영오적용확인 */
-    width: 1000px;
-    /* 마영오 */
+    /* 가로크기를 줘야 마영오적용확인! */
+    width: 804px;
+    /* 마영오 - 블록박스 가로중앙 */
     margin: 0 auto;
 }
-/* 가상요소로 float지우기 */
-.blink ul::after{
-    content: "";
-    display: block;
-    clear: both;
-}
 
-/* 하단링크 리스트  */
 .blink li{
+    /* 옆으로 흐르게 */
     float: left;
     /* 양쪽패딩 */
     padding: 0 15px;
-
 }
 /* 글자셋팅 */
 .blink a{
-    color: 222;
+    /* 글자셋팅 */
+    color: #222;
     font-weight: bold;
     font-size: 14px;
     line-height: 2.8;
 }
 /* 마우스 오버시 a */
 .blink a:hover{
-    /* 글자색변경, 밑줄없앰 */
+    /* 글자색변경, 밑줄 */
     color: red;
     text-decoration: underline;
 }
 
-.scbar::-webkit-scrollbar-track{
-    /* 스크롤바 트랙 */
-    background-color: #ddd;
-    border-radius: 5px;
-}
-/* float설정 지우기 클래스 */
-.clb::after{
-    content: "";
-    display: block;
-    clear: both;
-}
-
 /* 3-2. 회사정보 */
 .addr{
+    /* 패딩 */
     padding: 10px;
 }
 .addr address{
-    /* 글자셋팅 - address요소 기본 이탤릭 해제 */
+    /* 글자셋팅 - address요소 기본 이탤릭해제 */
     font-size: 14px;
     font-style: normal;
     text-align: center;
     line-height: 2;
 
     /* 박스셋팅 */
-    width: 704px;
+    width: 804px;
     margin: 0 auto;
     padding: 10px;
     border: 4px double #222;
@@ -143,20 +128,22 @@
     /* 글자중앙 */
     text-align: center;
 }
+
 /* 3-4. 바로가기 */
-.brand{
+.brand {
     /* 앱솔루트 포지션 */
     position: absolute;
     top: 5px;
     right: 0;
-
-    /* 부모는 ? .info */
+    /* 부모는? .info */
 }
-#sel{
+/* 선택박스 */
+#sel {
     /* 글자셋팅 */
     color: #222;
     font-weight: bold;
     font-size: 14px;
-    /* line-height: 2.4; */
+
+    /* 패딩 */
     padding: 8px;
 }
