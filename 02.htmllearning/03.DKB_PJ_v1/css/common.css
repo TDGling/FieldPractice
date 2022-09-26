@@ -44,12 +44,12 @@
 }
 /* GNB 상위메뉴 a */
 .gnb>ul>li>a{
-    /* 렐러티브 포지션 - 부모자격a::after */
+    /* 레러티브 포지션 - 부모자격(a::after) */
     position: relative;
-    /* 디스플레이 변경 : 블록 */
+    /* 디스플레이 변경! 블록! */
     display: block;
     /* 글자셋팅 */
-    font-size: 17px;
+    font-size: 1.7rem;
     line-height: 2.5;
 }
 /* 가상요소로 하단바 만들기 */
@@ -61,15 +61,13 @@
     width: 0;
     height: 3px;
     background-color: red;
-    /* 트렌지션 속사이미지 trs */
+    /* 트랜지션: 속시이지 trs */
     transition: width .2s;
 }
 /* 마우스 오버시 하단바 보이기 */
 .gnb>ul>li>a:hover::after{
     width: 100%;
-    /* display: block; */
 }
-
 
 /* 1-3.탑메뉴 */
 .tmenu{
@@ -81,17 +79,16 @@
 }
 /* 탑메뉴 상위li */
 .tmenu>ul>li{
-    /* 패딩 양쪽 */
+    /* 패딩양쪽 */
     padding: 0 5px;
 }
 /* 탑메뉴 상위a */
 .tmenu>ul>li>a{
     /* 글자크기 */
-    font-size: 15px;
+    font-size: 1.5rem;
 }
-
-/* SNS메뉴 */
-.sns{
+/* sns메뉴 */
+.sns {
     /* 마진 상단 */
     margin-top: -5px;
 }
@@ -99,12 +96,13 @@
     width: 30px;
     height: 30px;
     /* 배경이미지로 sns 아이콘 넣기(스프라이츠) */
-    background: url(../images/icons.png)no-repeat;
+    background: url(../images/icons.png) no-repeat;
 }
-/* 트위치 */
+/* 트위터 */
 .sns li:nth-child(1){
     background-position: 0 0;
 }
+/* 트위터 오버시 */
 .sns li:nth-child(1):hover{
     background-position: 0 -30px;
 }
@@ -112,6 +110,7 @@
 .sns li:nth-child(2){
     background-position: -30px 0;
 }
+/* 인스타그램 오버시 */
 .sns li:nth-child(2):hover{
     background-position: -30px -30px;
 }
@@ -119,10 +118,11 @@
 .sns li:nth-child(3){
     background-position: -60px 0;
 }
-/* 트위치 */
+/* 페이스북 오버시 */
 .sns li:nth-child(3):hover{
     background-position: -60px -30px;
 }
+
 /* sns a요소 확장 */
 .sns a{
     display: block;
@@ -130,25 +130,23 @@
     height: 100%;
 }
 
+
 /************** 3. 하단영역 **************/
 /* 겉박스 */
 #info{
     background-color: rgba(255, 255, 255, 0.765);
 }
-
 /* 속박스 */
 .info{
     /* 레러티브 포지션 - 부모자격(.brand) */
     position: relative;
     height: 241px;
 }
-
 /* 3-1. 하단링크 */
 .blink{
     /* 패딩상단 pt */
     padding-top: 5px;
 }
-
 /* 하단링크 리스트 */
 .blink ul{
     /* 가로크기를 줘야 마영오적용확인! */
@@ -168,7 +166,7 @@
     /* 글자셋팅 */
     color: #222;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 2.8;
 }
 /* 마우스 오버시 a */
@@ -185,7 +183,7 @@
 }
 .addr address{
     /* 글자셋팅 - address요소 기본 이탤릭해제 */
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
     text-align: center;
     line-height: 2;
@@ -216,7 +214,7 @@
     /* 글자셋팅 */
     color: #222;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
 
     /* 패딩 */
     padding: 8px;

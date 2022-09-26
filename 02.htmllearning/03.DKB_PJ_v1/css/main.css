@@ -190,7 +190,7 @@ body{
     /* 글자체 ff - 웹폰트 */
     font-family: 'Gugi';
     /* 글자크기 fz */
-    font-size: 24px;
+    font-size: min(1.9vw,24px);
     /* 글자두께 보통 fwn */
     font-weight: normal;
     /* 패딩 : 위 15px 양쪽 10px 아래 5px */
