@@ -11,6 +11,10 @@
 /* body * {
     outline: 1px dotted red;
 } */
+#cont{
+    /* 전체 메인 배경색 */
+    background-color: #d7d7d7;
+}
 
 /* 메인 속박스 */
 .cont{
