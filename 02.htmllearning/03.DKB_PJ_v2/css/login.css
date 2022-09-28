@@ -21,7 +21,7 @@
 /* 메인 속박스 */
 .cont{
     /* 최소높이설정 : 내용넘칠경우 자동 auto */
-    height: 600px;
+    min-height: 600px;
 }
 
 /* 1. 타이틀 */
@@ -89,7 +89,7 @@ input:focus{
     right: 60px;
 }
 /* 서브밋버튼 */
-.sbtn{
+#sbtn{
     width: 113px;
     height: 92px;
     border: 1px solid #888;
@@ -105,7 +105,7 @@ input:focus{
 .addbx{
     margin-top: 50px;
     text-align: center;
-    font-size: 1.6em;
+    font-size: 1.6rem;
 }
 
 /* 체크박스 라벨 */
