@@ -117,7 +117,7 @@
         </header>
     </div>
     <!-- 2. 메인영역 -->
-    <div>
+    <div id="cont">
         <main class="cont ibx">
             <!-- 2-1. 타이틀 -->
             <h2 class="stit">Log In</h2>
@@ -146,13 +146,31 @@
                             for - 입력할 아이디요소와 연결
 
                             [input속성체크:]
-                             name - 서버페이지 전송시사용 
+                             name - 서버페이지 전송시사용
                              maxlength - 최대글자입력제한
                              placeholder - 안내문구출력
                         -->  
                     </div>
                     <!-- 비밀번호 박스 -->
-                    <div class="minput"></div>
+                    <div class="minput">
+                        <label for="mqw">비밀번호</label>
+                        <input type="password" name="mpw" id="mpw" maxlength="10" placeholder="비밀번호를 입력해주세요.">
+                        <!-- type이 password이면 비밀번호로 표시함 -->
+                    </div>
+                    <div class="btnbx">
+                        <input type="submin" id="sbtn" value="LOGIN">
+                        <!-- type이 submit이면 form요소 안의 모든 입력요소를  target페이지로 전송하는 기능버튼 -->
+                    </div>
+                    <div class="addbx">
+                        <span>
+                            <input type="checkbox" id="chkbx" name="chkbx">
+                            <label for="chkbx">아이디저장</label>
+                            <!-- type이 checkbox이면 체크박스 -->
+                        </span>
+                        <span><a href="#">아이디찾기</a></span>
+                        <span><a href="#">비밀번호찾기</a></span>
+                        <span><a href="#">회원가입</a></span>
+                    </div>
                 </form>
             </section>
         </main>
