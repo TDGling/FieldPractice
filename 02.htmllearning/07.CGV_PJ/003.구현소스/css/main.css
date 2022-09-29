@@ -58,14 +58,17 @@ body *{
     width: 701px;
     height: 397px;
     /* 부모는 = .cont */
-    background-color: red;
+    background-color: #000;
 }
 
-
-/*____ 3. 하단영역 ____*/
-.info{
+#screen iframe{
     width: 100%;
     height: 100%;
     border: none;
     /* 기본프레임보더 없앰 */
+}
+
+/*____ 3. 하단영역 ____*/
+.info{
+    height: 100px;
 }
