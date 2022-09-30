@@ -46,7 +46,7 @@ body *{
     /* 렐러티브 포지션 : 부모자격(#scrren) */
     position: relative;
     height: 788px;
-    background: url(../images/bg.jpg)no-repeat;
+    background: url(../images/bg.jpg)no-repeat center;
 }
 /* 2-1. 스크린박스 */
 #screen{
@@ -129,15 +129,15 @@ body *{
     /* 트랜지션 : 속시이지 */
     text-shadow: top .3s ease-out;
 }
+/* 상위 li에 마우스 오버시 영화정보 올라오기 */
+.mlist ul>li:hover .movtxt{
+    top: 0;
+}
 /* 영화제목만 변경 */
 .movtxt li:first-child{
     color: aqua;
     font-size: 1.7rem;
     letter-spacing: -1px;
-}
-/* 상위 li에 마우스 오버시 영화정보 올라오기 */
-.mlist ul>li:hover .movtxt{
-    top: 0;
 }
 
 
