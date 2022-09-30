@@ -12,55 +12,56 @@ body{
 
 /* 공사중표시 */
 body *{
-    outline: 1px dotted skyblue;
+    outline: 1px dotted lime;
 }
 
-
-/*____ 1. 상단영역 ____*/
+/****************** 1. 상단영역 ******************/
 .top{
     height: 80px;
-    background: url(../images/curtain.jpg)repeat-x;
+    background: url(../images/curtain.jpg) repeat-x;
 }
-/* 1-1. 로고 */
+/* 1-1.로고 */
 .tit{
     font-family: 'Jua', sans-serif;
     color: aquamarine;
     font-size: 4rem;
     text-align: center;
     line-height: 80px;
+
     /* 그림자를 이용한 Glow효과 */
     text-shadow: 0 0 4px aquamarine;
-    /* 애니메이션 : 이시이지반방마 */
-    animation: titAni .5s ease-in infinite alternate;
+    /* 애니메이션: 이시이지반방마 */
+    animation: 
+    titAni .5s ease-in infinite alternate;
 }
 /* 타이틀 글로우 효과 애니메이션 키프레임 */
 @keyframes titAni {
     to{
         text-shadow: 0 0 12px aquamarine;
     }
-}
+} /* 키프레임 */
 
-
-/*____ 2. 메인영역 ____*/
+/****************** 2. 메인영역 ******************/
 .cont{
-    /* 렐러티브 포지션 : 부모자격(#scrren) */
+    /* 렐러티브 포지션 : 부모자격(#screen) */
     position: relative;
     height: 788px;
-    background: url(../images/bg.jpg)no-repeat center;
+    background: url(../images/bg.jpg) no-repeat center;
 }
-/* 2-1. 스크린박스 */
+/* 2-1.스크린박스 */
 #screen{
     /* 앱솔루트 포지션 */
     position: absolute;
     top: 136px;
-    left: calc(50% - 345px);
-    /* 화면이 줄어도 스크린이 중앙에 위치하도록 left 50%밀고 스크린 크기의 절반정도를 뺌 */
-    width: 701px;
+    left: calc(50% - 344px);
+    /* 화면이 줄어도 스크린이 중앙에 위치하도록
+    left 50%밀고 스크린 크기의 절반정도를 뺌! */
+    width: 702px;
     height: 397px;
-    /* 부모는 = .cont */
+    /* 부모는? .cont */
     background-color: #000;
 }
-
+/* 유튜브 아이프레임 */
 #screen iframe{
     width: 100%;
     height: 100%;
@@ -73,8 +74,9 @@ body *{
     position: absolute;
     bottom: 57px;
     width: 100%;
-    /* 앱솔루트 판타롱스타킹 이므로 가로크기를 부모박스에 맞춘다.
-    why = flex정렬을 쓰려고 */
+    /* 앱솔루트 판타롱스타킹 이므로
+    가로크기를 부모박스에 맞춘다!
+    왜? flex 정렬을 쓰려고! */
 }
 /* 선택메뉴 ul */
 .mlist ul{
@@ -85,12 +87,14 @@ body *{
 }
 /* 상위 li */
 .mlist ul>li{
-    /* 랠러티브 포지션 - 부모자격(.movtxt) */
+    /* 렐러티브 포지션 
+    - 부모자격(.movtxt) */
     position: relative;
-    /* 부모자격이 있는 요소가 앱솔루트를 숨길 수 있다. */
+    /* 부모자격이 있는 요소가
+    앱솔루트 숨길 수 있다! */
     overflow: hidden;
 }
-/* 상위li 2번째 부터 끝까지 선택 */
+/* 상위 li 2번째 부터 끝까지 선택 */
 .mlist>ul>li+li{
     margin-left: 10px;
 }
@@ -103,36 +107,40 @@ body *{
 
 /* 영화정보박스 */
 .movtxt{
-    /* 플랙스박스 */
+    /* 플렉스박스 */
     display: flex;
-    /* 프렉스 수직방향 */
+    /* 플렉스 수직방향진행 */
     flex-direction: column;
     /* 진행방향의 수평 중앙정렬 */
     justify-content: center;
+
+
     /* 앱솔루트 포지션 */
     position: absolute;
-    top: 0;
-    /* 부모는 상위 li */
+    /* 처음에 높이값 만큼 아래에 있음 */
+    top: 100%;
+    /* 부모는? 상위li */
     width: 100%;
     height: 100%;
+
     /* 반투명배경 */
     background-color: rgba(0, 0, 0, 0.7);
+
     /* 글자셋팅 */
-    /* 앱솔루트 포지션 */
-    font-family: 'Cute Font',cursive;
-    /* 처음에 높이값 만큼 아래에 있음 */
+    font-family: 'Cute Font', cursive;
     color: #fff;
-    /* 부모 = 상위li */
-    font-size: 1.4em;
+    font-size: 1.4rem;
     text-align: center;
     line-height: 2;
-    /* 트랜지션 : 속시이지 */
-    text-shadow: top .3s ease-out;
+
+    /* 트랜지션: 속시이지 */
+    transition: top 0.5s cubic-bezier(0.74, 0.1, 0.34, 0.93);
 }
-/* 상위 li에 마우스 오버시 영화정보 올라오기 */
+/* 상위li에 마우스 오버시 영화정보 올라오기 */
 .mlist ul>li:hover .movtxt{
     top: 0;
 }
+
 /* 영화제목만 변경 */
 .movtxt li:first-child{
     color: aqua;
@@ -140,8 +148,37 @@ body *{
     letter-spacing: -1px;
 }
 
-
-/*____ 3. 하단영역 ____*/
+/****************** 3. 하단영역 ******************/
 .info{
+    /* 플렉스박스 - 하위직계div만 옆으로 흐름 */
+    display: flex;
     height: 100px;
+}
+
+/* 3-1.하단로고 */
+.info>div:first-child{
+    margin-right: 20px;
+}
+/* 3-2.회사주소 */
+.info address{
+    color: #ccc;
+    /* 기본 이탤릭 해제 */
+    font-style: normal;
+    font-family: 'Cute Font', cursive;
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+/* 3-3.SNS박스 */
+.info>div:last-child{
+    /* 마지막 div만 오른쪽 끝으로 이동! */
+    margin-left: auto;
+}
+.sns{
+    /* 플렉스박스 
+    - 하위 li 옆으로 흐르게 */
+    display: flex;
+}
+.sns li{
+    width: 34px;
+    height: 34px;
 }
