@@ -29,7 +29,7 @@ body{
     transform-style: preserve-3d;
     /* 입체를 잘보이게 하기 위해 약간회전 */
     transform: rotateX(10deg) rotateY(30deg);
-    outline: 1px solid #000;
+    /* outline: 1px solid #000; */
 }
 /* 큐브각면 공통 */
 .cube span{
@@ -41,7 +41,8 @@ body{
     /* 부모 = .cube */
     /* 투명도 */
     opacity: 0.8;
-    outline: 2px dashed red;
+    
+    outline: 1px solid #000
 }
 /* 1. 앞면 */
 .cube span:nth-child(1){
@@ -69,7 +70,7 @@ body{
 }
 /* 5. 윗면 */
 .cube span:nth-child(5){
-    background: url(../images/citys.img)no-repeat center/cover;
+    background: url(../images/citys.jpg)no-repeat center/cover;
     /* y축 회전gkrh 화면방향(z)밀기 */
     transform: rotateX(90deg)translateZ(150px);
 }
@@ -78,4 +79,46 @@ body{
     background: url(../images/London_city.jpg)no-repeat center/cover;
     /* y축 회전gkrh 화면방향(z)밀기 */
     transform: rotateX(-90deg)translateZ(150px);
+}
+/* 버튼박스 */
+.btns{
+    text-align: center;
+    padding: 50px;
+}
+/* 버튼 */
+.btns button{
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+/* 애니메이션 호출 클랙스 */
+.cube-ani{
+    /* 애니메이션 : 이시이지반방마 */
+    animation: cubeAni 4s linear infinite;
+    /* 처음에 멈춰있기 */
+    animation-play-state: paused;
+}
+/* 애니메이션 플레이 클래스 */
+.cube-ani.on{
+    /* 애니메이션 재생 */
+    animation-play-state: running;
+}
+
+/* 큐브회전 키프레임 */
+@keyframes cubeAni {
+    to{
+        transform: rotateX(370deg) rotateY(-330deg);
+        /* transform: rotateX(370deg) rotateY(-330deg)rotateZ(360deg); */
+        /* 
+            x축 양의 방향으로 10도에서 출발 
+            양의 방향 360도 + 10도 = 370도
+            음의 방향 -360 + 10도 = -350도
+
+            y축 양의 방향으로 30도에서 출발
+            양의 방향 360 + 30도 = 390도
+            음의 방향 -360도 + 30도 = -330도
+
+            -> rotateZ() - z축 회전도 가능함
+            */
+    }
 }
