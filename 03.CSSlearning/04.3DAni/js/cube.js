@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded",function(){
     const btns = document.querySelector(".btns button");
 
     // 변경대상: .cube
-    const cube = this.document.queryCommandIndeterm(".cube");
+    const cube = document.querySelector(".cube");
 
     // 대상에 클릭설정하기
     // btns.onclick = aniFn;
