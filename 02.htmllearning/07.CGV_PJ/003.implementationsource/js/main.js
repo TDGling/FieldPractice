@@ -1,5 +1,10 @@
 // CGV PJ 메인 페이지 JS - main.js
 
+/* 로드구역 */
+window.addEventListener("DOMContentLoaded",()=>{
+    console.log("로딩완료!");
+});
+
 // 예고편 선택메뉴 a요소 -> movlink변수
 var movlink = document.querySelectorAll(".mlist a");
 console.log(movlink);
