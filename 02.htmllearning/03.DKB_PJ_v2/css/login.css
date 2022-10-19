@@ -14,13 +14,13 @@
 
 /* 메인 겉박스 */
 #cont{
-    /* 전체 메인배경색 */
+    /* 전체 메인 배경색 */
     background-color: #d7d7d7;
 }
 
 /* 메인 속박스 */
 .cont{
-    /* 최소높이설정 : 내용넘칠경우 자동 auto */
+    /* 최소높이설정 : 내용넘칠경우 자동auto */
     min-height: 600px;
 }
 
@@ -31,24 +31,25 @@
     padding: 40px 0 20px;
     font-weight: normal;
 }
-
 /* 2. 컨텐츠박스 */
 .scont{
-    /* 렐러티브 포지션 (부모자격 : .btnbx */
+    /* 렐러티브 포지션 (부모자격:.btnbx) */
     position: relative;
     max-width: 700px;
     min-height: 275px;
     margin: 0 auto;
+
     background-color: #fff;
     border-radius: 10px;
     border: 2px solid #777;
     padding: 60px 15px;
-    /* 박스크기유지 : 보더,패딩포함 bzv */
+    /* 박스크기유지: 보더,패딩포함 bxb */
     box-sizing: border-box;
 }
 
 /* 입력창 공통 라벨 */
 .minput label{
+    /* 크기디자인 적용위해 */
     display: inline-block;
     width: 150px;
     font-size: 2rem;
@@ -66,7 +67,7 @@
     border-radius: 5px;
     font-size: 1.8rem;
     padding-left: 15px;
-    /* 크기유지 */
+    /* 크기유지 bxb */
     box-sizing: border-box;
     color: #555;
 }
@@ -76,17 +77,18 @@
     margin-top: 20px;
 }
 
-/* 포커스 아웃라인 제거 - 모든 브라우저에 기본 보커스 아웃라인 셋팅됨 */
+/* 포커스 아웃라인 제거
+모든 브라우저에 기본 포커스 아웃라인 셋팅됨! */
 input:focus{
     outline: none;
 }
 
 /* 버튼영역 */
 .btnbx{
-    /* 부모는 = .scont */
     position: absolute;
     top: 60px;
     right: 60px;
+    /* 부모는? .scont */
 }
 /* 서브밋버튼 */
 #sbtn{
@@ -95,7 +97,8 @@ input:focus{
     border: 1px solid #888;
     border-radius: 5px;
     /* 배경 그라데이션 */
-    background-image: linear-gradient(to bottom,#ddd,#555);
+    background-image: 
+    linear-gradient(to bottom,#ddd,#555);
     color: #fff;
     font-size: 1.5rem;
     text-shadow: 1px 1px #555;
@@ -115,19 +118,17 @@ input:focus{
     width: 0;/* 체크박스 안보임 */
     /* vertical-align: -3px; */
 }
-
-/* 체크박스 아이콘을 라벨에 넣기 */
+/* 체크박스 아이콘을 라벨에 넣기! */
 .addbx input+label{
     display: inline-block;
     width: 20px;
     height: 20px;
     vertical-align: -3px;
-    position: 20px;
-    /* color: #000; */
+    font-size: 20px;
+    color: orangered;
     margin-right: 5px;
     /* outline: 1px solid red; */
 }
-
 /* 체크박스 체크시 아이콘 변경 */
 .addbx input:checked+label{
     font-weight: 900;

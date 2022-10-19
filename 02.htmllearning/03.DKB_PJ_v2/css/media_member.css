@@ -12,24 +12,27 @@
     .scont li {
         height: auto;
     }
+
     /* 3. 입력창 */
     .scont input[type="text"],
     .scont input[type="password"] {
         width: 100%;
     }
 
+    /* 4. 이메일 입력창 */
     #email1 {
-        width: 30vw;
+        width: 28vw;
         padding-left: 1vw;
         box-sizing: border-box;
     }
-    #seleml {
-        width: 34vw;
+    span.gol {
+        font-size: 3vw;
     }
     #seleml {
-        width: 34vw;
+        width: 30vw;
     }
-    /* 가입하기 버튼 */
+
+    /* 5. 가입하기 버튼 */
     #btnj {
         width: 100%;
         float: none;
