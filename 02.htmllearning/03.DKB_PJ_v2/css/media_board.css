@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* 시청자 게시판 페이지 미디어쿼리 CSS - media_board.css */
+
+/**************** 750이하 ****************/
+@media screen and (max-width: 750px) {
+    .stit {
+        font-size: min(8vw,5rem);
+    }
+    /* 첫번째 마지막 열 없애기 */
+    #drama thead tr th:first-child,
+    #drama tbody tr td:first-child,
+    #drama thead tr th:last-child,
+    #drama tbody tr td:last-child {
+        display: none;
+    }
+} /**************** 750px이하 ****************/

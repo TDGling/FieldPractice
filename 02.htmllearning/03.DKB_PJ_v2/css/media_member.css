@@ -3,9 +3,8 @@
 
 /**************** 750이하 ****************/
 @media screen and (max-width: 750px) {
-
     /* 1. 라벨공통 */
-    .itit{
+    .itit {
         display: block;
     }
 
@@ -13,6 +12,27 @@
     .scont li {
         height: auto;
     }
+    /* 3. 입력창 */
+    .scont input[type="text"],
+    .scont input[type="password"] {
+        width: 100%;
+    }
 
-
+    #email1 {
+        width: 30vw;
+        padding-left: 1vw;
+        box-sizing: border-box;
+    }
+    #seleml {
+        width: 34vw;
+    }
+    #seleml {
+        width: 34vw;
+    }
+    /* 가입하기 버튼 */
+    #btnj {
+        width: 100%;
+        float: none;
+        margin-top: 20px;
+    }
 } /**************** 750px이하 ****************/

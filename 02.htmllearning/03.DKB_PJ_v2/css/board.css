@@ -67,6 +67,17 @@
     /* 테이블 width지정이 없으면 내용만큼 늘어남!
     좁으면 아래로 내용이 줄바꿈됨 */
 }
+/* 제목 데이터 부분(2번째 td */
+#drama today tr rd:nth-child(2){
+    /* 왼쪽정렬 */
+    text-align:left;
+}
+#drama thead tr th:first-child,
+#drama today tr td:first-child,
+#drama thead tr th:last-child,
+#drama today tr td:last-child{
+    display: none;
+}
 /* 테이블 제목 */
 #drama caption{
     /* 글자크기 fz */
