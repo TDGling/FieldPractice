@@ -1,31 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>클래스 선택자</title>
+        <!-- 제이쿼리 라이브러리 먼저호출 -->
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script>
+            $(() => {
+                // jQB
+                // 미션: 클래스가 .tit인 요소를 클릭하면
+                // .group인 요소의 하위 li를 순서대로
+                // 글자크기 50px 배경색 각각 lime, yellow, pink색으로
+                // 또한 margin-left값을 100px로
+                // 1초간격으로 1초동안 변경되게 설정하시오!
 
-<head>
-  <meta charset="utf-8">
-  <title> 클래스 선택자 </title>
-  
+                $(".tit").click(() => {
+                    $(".group li:first-child").css({
+                        fontSize: "50px",
+                        backgroundColor: "lime",
+                        marginLeft: "100px",
+                        transition: "1s ease-out",
+                    });
+                    $(".group li:nth-child(2)").css({
+                        fontSize: "50px",
+                        backgroundColor: "pink",
+                        marginLeft: "100px",
+                        transition: "1s ease-in-out 1s",
+                    });
+                    $(".group li:nth-child(3)").css({
+                        fontSize: "50px",
+                        backgroundColor: "skyblue",
+                        marginLeft: "100px",
+                        transition: "1s ease-in-out 2s",
+                    });
+                });
+            });
+        </script>
+    </head>
 
-</head>
+    <body>
+        <div id="container">
+            <header>
+                <h2 class="tit">여기를 과감하게 클릭하세요~!!!!</h2>
+            </header>
 
-<body>
-
-  <div id="container">
-
-    <header>
-      <h2 class="tit"> 여기를 과감하게 클릭하세요~!!!! </h2>
-    </header>
-
-    <nav>
-      <ul class="group">
-        <li id="first">One</li>
-        <li id="second">Two</li>
-        <li id="third">Three</li>
-      </ul>
-    </nav>
-
-  </div>
-
-</body>
-
+            <nav>
+                <ul class="group">
+                    <li id="first">One</li>
+                    <li id="second">Two</li>
+                    <li id="third">Three</li>
+                </ul>
+            </nav>
+        </div>
+    </body>
 </html>
