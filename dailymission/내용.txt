@@ -1,4 +1,4 @@
 awwwards 홈페이지 확인
-DOM 이론설명 대상의 높이값 알아보기 사이트 열기
-appendChild 이미지 위치 바꾸기
-제이쿼리 그룹선택자 전체선택자 descendant 선택자
+보그 페이지 이이서 만들기 복습하는 개념
+ossomage
+descendant child siblings attribute
