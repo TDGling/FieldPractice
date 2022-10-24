@@ -1,4 +1,0 @@
-awwwards 홈페이지 확인
-보그 페이지 이이서 만들기 복습하는 개념
-ossomage
-descendant child siblings attribute
