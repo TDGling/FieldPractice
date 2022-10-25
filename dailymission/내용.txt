@@ -1,3 +1,0 @@
-VoguePJ 상단 메뉴와 GNB메뉴 제작
-Java 기본설정 / Java 이론
-JQuery 연습 eq선택자
