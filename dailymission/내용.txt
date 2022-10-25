@@ -1,4 +1,5 @@
-SVG 
-VOGUE PJ 
+SVG 기본원리 및 애니메이션
+VOGUE PJ 상단 하단부분 완성
 Ossomae PJ 보강
 jQuery gt 연산자 lt선택자 first_last선택자
+javabackend 연습
