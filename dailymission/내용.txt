@@ -1,2 +1,4 @@
 SVG 
-VOGUE PJ
+VOGUE PJ 
+Ossomae PJ 보강
+jQuery gt 연산자 lt선택자 first_last선택자
