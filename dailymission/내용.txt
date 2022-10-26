@@ -1,5 +1,4 @@
-SVG 기본원리 및 애니메이션
-VOGUE PJ 상단 하단부분 완성
-Ossomae PJ 보강
-jQuery gt 연산자 lt선택자 first_last선택자
-javabackend 연습
+SVG 기본원리 및 애니메이션 - 사각형
+Java 변수와 데이터 유형 
+SQL 
+JS
