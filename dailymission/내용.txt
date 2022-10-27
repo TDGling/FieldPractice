@@ -1,8 +1,4 @@
 awwwards
 SVG 기본원리 및 애니메이션 - 다각형
-js학습 - 쇼핑몰베너 가로형
-배열매서드
-생성자함수
-Jquery 선택자 매서드
-Java 제어문
-SQL 
+js학습 - 쇼핑몰베너 가로형 배열매서드 생성자함수
+Jquery 선택자 매서드 chlidren find prev next sivlings
