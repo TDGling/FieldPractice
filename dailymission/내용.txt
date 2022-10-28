@@ -1,6 +1,6 @@
 awwwards
-SVG 기본원리 및 애니메이션 - 마지막
-Jquery 트래버싱
+SVG 기본원리 및 애니메이션 - 마지막 자유곡선
+Jquery 트래버싱 parent filtering eventFlow filtering
 java 기본문법
 SQL 기본쿼리
 js학습 - 배너유형
