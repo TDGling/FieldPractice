@@ -4,6 +4,24 @@
 <head>
   <meta charset="utf-8">
   <title> parent </title>
+  <script src="./js/jquery-3.6.1.min.js"></script>
+  <script src="./js/jquery-ui.min.js"></script>
+  <script>
+    $(()=>{
+      /* 
+        [ parent() 매서드 ]
+        - 서낵요소를 싸고 있는 부모요소를 선택함
+        > 만약 parent()를 여러번 쓰면 쓴 횟수만큼 부모로 올라감
+        예) div>p>a>span 이런 구조라면 $("xpan").parent().parent() > 부모들 중 p태그
+
+        // 미션: p태그를 클릭하면 부모요소의 배경색을 빨간색으로 변경하시오.
+        // animate() 사용
+      */
+      $("p").click(function(){
+        $(this).parent().animate({backgroundColor : "red"},1000)
+      })
+    });
+  </script>
   
 
   <style>
