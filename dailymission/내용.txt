@@ -1,6 +1,5 @@
 awwwards
-SVG 기본원리 및 애니메이션 - 마지막 자유곡선
-Jquery 트래버싱 parent filtering eventFlow filtering
-java 기본문법
-SQL 기본쿼리
-js학습 - 배너유형
+JS학습 생성자 함수
+보그PJ 메인 스크롤 이벤트 제이쿼리
+jAVA 문자열, 수학함수, 불린형
+SQL DB 생성, table 생성, insert into, select , modify, delete
