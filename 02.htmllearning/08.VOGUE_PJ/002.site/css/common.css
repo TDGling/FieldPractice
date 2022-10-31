@@ -2,19 +2,18 @@
 /* 보그 PJ 공통디자인 CSS - common.css */
 /* 상단영역 + 하단영역 */
 
-/* 1. 상단영역 */
+/*************** 1. 상단영역 ***************/
 #top {
     position: relative;
-    /* z - index를 위해 럴리티브 */
+    /* z-index를 위해 렐러티브줌! */
     z-index: 9999;
-    /* 박스하단 경계선 그림자 x y z blur color */
-    /* box-shadow: 0 2px 2px #000; */
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.157);
+    /* 박스하단 경계선 그림자 : x y blur 색 */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
 .top {
     min-height: 206px;
 }
-/* 1-1.상단메뉴 */
+/********** 1-1.상단메뉴 **********/
 .tmenu {
     /* 플렉스박스 */
     display: flex;
@@ -65,9 +64,10 @@
 .smbx {
     /* 플렉스박스 */
     display: flex;
-    /* 수평방향 정렬 */
+    /* 수평방향정렬 - 오른쪽끝 */
     justify-content: flex-end;
-    /* 글자체 : Roboto, 나눔바른고딕 */
+
+    /* 글자체: Roboto, 나눔바른고딕 */
     font-family: "Roboto", nbg;
     font-size: 12px;
 }
@@ -78,35 +78,34 @@
     line-height: 44px;
     color: #747474;
 }
-/* 사이드 메뉴 상위 첫번째 사이구분선 요소 */
+/* 사이드 메뉴 상위 첫번째li 사이구분선 */
 .smbx > li:first-child {
     border-right: 1px solid #e5e5e5;
 }
 /* 사이드 메뉴 서브박스 */
 .smsub {
     position: absolute;
-    border: 1px solid #e5e5e5;
-    margin-left: -1;
-    /* 앱솔루트의 미세위치조정은 마진으로 */
-    /* 처음에 투명하게 - 트랜지션 */
-    opacity: 0;
+    margin-left: -1px;
+    /* 앱솔루트의 미세위치조정은 마진으로! */
 
+    /* 처음에 투명 - 트랜지션처리! */
+    opacity: 0;
+    /* 처음에 높이값 0 */
     height: 0;
-    /* 넘치는 자식 숨기기 */
+    /* 넘치는 자식숨기기 */
     overflow: hidden;
 
     border: 1px solid #e5e5e5;
 }
 /* 상위메뉴에 오버시 나타나기 */
 .smbx > li:first-child:hover .smsub {
-    /* 투명도 1 - 보임 */
+    /* 투명도 1 - 보임! */
     opacity: 1;
     /* 처음높이값 복원 */
     height: auto;
-    /* 트랜지션 - 오버시에만 적용 */
+    /* 트랜지션 - 오버시에만 적용! */
     transition: 0.5s;
 }
-
 /* 서브메뉴 a요소 */
 .smsub a {
     display: block;
@@ -122,26 +121,26 @@
 /* 사이드 메뉴 상위 첫번째 a요소 커서 */
 .smbx > li:first-child > a {
     cursor: text;
-    /* 커서 text는 글자입력모양 */
+    /* 커서 text는 글자입력모양(I자) */
 }
-/* 커서모양값 참조 */
-/* https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
+/* 커서모양값 참고:
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
 
-/* 1-2.로고박스 */
+/********** 1-2.로고박스 **********/
 .logo {
     height: 115px;
     text-align: center;
     margin-top: 1px;
     /* margin-bottom: 10px; */
 }
-/* 1-3.GNB박스 */
+/********** 1-3.GNB박스 **********/
 .gnb {
+    /* 글자설정 */
     font-family: "Roboto Condensed", sans-serif;
     font-size: 16px;
-    min-height: 46px;
     line-height: 40px;
 
-    line-height: 40px;
+    min-height: 46px;
 }
 /* GNB ul */
 .gnb ul {
@@ -160,8 +159,8 @@
 .gnb li:last-child {
     padding-right: 0;
 }
-/* akwlakr li a 돋보기 */
-.gnb li > :last-child a {
+/* 마지막 li a돋보기 */
+.gnb li:last-child a {
     font-weight: bold;
     padding-top: 2px;
 }
@@ -174,15 +173,26 @@
     color: red;
 }
 
-/* 슬림 상단 디자인 변경 */
-/* #top 최상위 박스에 class "on" 을 줘서 적용 */
+/************ 슬림 상단 디자인 변경 ************/
+/* #top 최상위 박스에 클래스 "on"을 줘서 적용! */
+
+/* 1. 상단영역 최상위 고정 */
 #top.on {
     position: fixed;
-    top: 0;
+    top: -50px; /* 기본상단위에 숨김! */
     left: 0;
     width: 100%;
     background-color: #fff;
+    padding-top: 5px;
+    /* 트랜지션 */
+    transition: 0.4s ease-out;
 }
+/* 스크롤방향에 따라 top값 변경하기! 스크롤 올라갈때니까 .up */
+#top.on.up {
+    top: 0;
+    /* 슬림메뉴 보이는 위치로! */
+}
+
 /* 2. 상단영역 속박스(.top) 최소높이 해제 */
 #top.on .top {
     min-height: auto;
@@ -193,10 +203,12 @@
     display: none;
 }
 
-/* 4. 로고박스  */
+/* 4. 로고박스 */
 #top.on .logo {
     position: absolute;
+    top: 0;
     left: 0;
+    /* 부모는? #top */
     padding: 10px;
     height: auto;
     margin-top: 0;
@@ -206,39 +218,60 @@
     width: 100px;
 }
 
-/* 5. gnb번경하기 */
-.gnb {
+/* 5. GNB메뉴 */
+#top.on .gnb {
     font-size: 14px;
+    min-height: 45px;
 }
-/* gnb li요소 */
-.gnb li{
+/* GNB li요소 */
+#top.on .gnb li {
     padding-right: 35px;
 }
-/* gnb a요소 */
-.gnb a {
+/* 마지막 li 패딩제외 */
+#top.on .gnb li:last-child {
+    padding-right: 0;
+}
+/* GNB a요소 */
+#top.on .gnb a {
     color: #333;
 }
 
-/* 2. 하단영역 */
+/* 미디어쿼리 (GNB마진left 수치적용)
+1300px+120px=1420px부터 적용! */
+@media screen and (max-width: 1420px) {
+    #top.on .gnb {
+        margin-left: 92px;
+        /* 왼쪽 공간 보정값 */
+    }
+}
+/* 860px이하 수치조정 */
+@media screen and (max-width: 860px) {
+    #top.on .gnb {
+        margin-left: 120px;
+        /* 왼쪽 공간 보정값 */
+    }
+}
+
+/*************** 2. 하단영역 ***************/
 .info {
     min-height: 286px;
     background-color: #000;
     padding: 70px;
-    /* 크기유지박스 bxb - 보더, 패딩포함 */
+    /* 크기유지박스 bxb - 보더,패딩포함 */
     box-sizing: border-box;
+    /* 공통 글자체 */
     font-family: "Roboto", nbg;
 }
-/* 3-1 하단로고 */
+/* 3-1. 하단로고 */
 .blogo {
     text-align: center;
 }
-
-/* 3-2 회사주소*/
+/* 3-2. 회사주소 */
 .addr {
     color: #747474;
     text-align: center;
     font-size: 11px;
-    /* address 기본 이탈릭 해제 */
+    /* address 기본 이탤릭해제 */
     font-style: normal;
     margin: 20px 0 10px;
 }
@@ -258,6 +291,6 @@
     margin: 0 6px;
 }
 /* 마지막 링크 글자 두껍게 */
-.blink li :last-child a {
+.blink li:last-child a {
     font-weight: bold;
 }
