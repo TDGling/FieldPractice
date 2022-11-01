@@ -14,6 +14,7 @@ $(() => {
     // 변경대상: #top
     const topA = $("#top");
     // 스크롤위치변수
+    const tbtn = $(".tbtn");
     let scTop;
     // 마지막 스크룰위치값
     let lastSc = 0;
@@ -33,11 +34,16 @@ $(() => {
             // addClass(클래스명) - 클래스넣기
 
             // 스크롤 방향에 따라 .up추가/제거
-            if (scTop > lastSc) {
+            if (scTop > lastSc) { // 숨기기
+                // #top의 높이값 (동적으로 높이값 설정)
+                let temp = topA.innerHeight();
                 // 스크롤 아랫방향
-                topA.removeClass("up");
+                topA.removeClass("up").css({top:-temp+"px"});
+                console.log(topA.innerHeight());
+                // height() - 피딩이 빠진 순수높이값
+                // innerHeight() - 패딩포함 내부높이값
             } ///// if ////
-            else {
+            else { // 보이기
                 // 스크롤 윗방향
                 topA.addClass("up");
             } //// else /////
@@ -60,5 +66,26 @@ $(() => {
         // 마지막위치 업데이트 필수!
         lastSc = scTop;
         ////////////////////////////
+
+        // 2. top 버튼 보이기 숨기기
+        if(scTop >= 300){
+            tbtn.addClass("on")
+        }
+        else{
+            tbtn.removeClass("on")
+        }
     }); //////// scroll /////////////////
+    tbtn.click(()=>{
+        // 스크롤 최상단으로
+        // 애니메이션 스크롤 이동
+        // 전체 스크롤 이동의 대상은
+        // > Html, body 두 최상위 요소를 대상으로 한다
+        // 그래야 모든 브라우저에서 공통으로 작동함
+        $("html,body").animate({
+            scrollTop:"0",
+        },800,"easeOutBounce")
+        // scrollTop 속성은 제이쿼리 전용
+        // 세로스크롤 위치값을 셋팅할 수 있다.
+        // 참고) 가로스크롤은 scrollLeft 임
+    })
 }); //////////////// jQB ///////////////////
