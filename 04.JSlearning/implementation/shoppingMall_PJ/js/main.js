@@ -147,4 +147,3 @@ function loadFn() {
         indic[cseq].classList.add("on");
     }; ////////////// chgIndic 함수 ////////////////
 } //////////////// loadFn 함수 ///////////////
-2

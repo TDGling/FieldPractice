@@ -1,11 +1,3 @@
 awwwards
-JS학습 생성자 함수
-보그PJ 메인 스크롤 이벤트 제이쿼리
-스크롤 이벤트 처리
-상단이동버튼
-스크롤등장액션
-부드러운 스크롤 플러그인
-SQL DB 생성, table 생성, insert into, select , modify, delete
-DDL
-DML
-제이쿼리 메서드
+javascript 쇼핑몰 배너 세로 페이드
+SVG progress
