@@ -1,6 +1,4 @@
 awwwards
-javascript 쇼핑몰 배너 세로 페이드
-SVG progress
- 
-NAYANGNA
+JAVA
+DB
 
