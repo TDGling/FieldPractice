@@ -112,4 +112,13 @@ function loadFn(cdata){ // cdata 제이슨 전달값
         // 코드넣기
         lnb.html(hcode);
     }
+
+    // (4) 각 컨텐츠 박스에 타이틀 넣기
+    // 대상 : .cbx h2
+    // 데이터 : 객체중 "타이틀"
+    // 제이쿼리 사용메서드 : each((순번,요소)=>{})
+    $(".cbx h2").each((ibx,ele)=>{
+        $(ele).html(data["타이틀"][ibx])
+        
+    })
 }

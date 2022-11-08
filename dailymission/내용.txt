@@ -1,3 +1,6 @@
+ctrl + shift + P
+"Developer: Inspect Editor Tokens and Scopes"
+
 awwwards
 
 1.보그 PJ
