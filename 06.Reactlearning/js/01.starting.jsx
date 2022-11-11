@@ -3,6 +3,7 @@
 // JSX(Javascript XML) 문법을 쓰는 파일은 .js 대신 .Jsx 확장자를 씀
 // return (jsx문법적용 태그 > 따옴표 없이 바로 사용)
 // 홀로태그는 꼭 닫기문법 사용 (xml문법) > 예) <br />
+
 // 함수명은 철글자가 반드시 대문자로 시작 아니면 안나옴 ( 원래는 클래스 기반에서 구현된 것이므로 클래스가 원래 첫 글자가 대문자로 시작된다.)
 // const { react, assertTSConstructSignatureDeclaration } = require("babel-types");
 
