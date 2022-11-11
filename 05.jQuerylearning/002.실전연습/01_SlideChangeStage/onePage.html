@@ -149,6 +149,32 @@
         }
 
     </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(()=>{
+            // a클릭시 스크롤 이동 애니메이션 구현
+            // 대상 : .gnb a
+            $(".gnb a").click(function(e){ // e-이벤트 전달변수
+                // e. 기본 이동 막기
+                e.preventDefault();
+
+                // 1. 클릭시 스크롤 위치 아이디 알아내기
+                let idnm = $(this).attr("href");
+                // console.log(idnm);
+                // 2. 해당 아이디박스 위치값 알아내기
+                let pos = $(idnm).offset().top;
+                // offset().top - top위치값 리턴
+                console.log(pos);
+
+                // 3. 위치이동 스크롤 애니메이션
+                // 전체스크롤 대상 : html,body(최상위 부모 2개 동시에)
+                $("html,body").animate({
+                    scrollTop: pos+"px"
+                },800,"easeInOutQuint");
+            });
+        });
+    </script>
     
 </head>
 <body>
