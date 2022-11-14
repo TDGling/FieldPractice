@@ -78,7 +78,10 @@ $(() => {
     // 2. 버튼 셋팅하기
     // 모든 버튼은 숨기고 첫번재 버튼만 보여!
     // 버튼.숨겨().첫번째().보여()
-    btns.hide().first().show();
+    // btns.hide().first().show();
+
+    //테스트시 중간버튼부터
+    btns.hide().eq(4).show();
 
     // 3. 공통함수 : actMini() ///////////////////////
     const actMini = (ele, seq, fn) => {
@@ -290,36 +293,142 @@ $(() => {
         .next()
         .click(function () {
             // 이동후 함수
-            let fn = () => {};
+            let fn = () => {
+                // 주사기돌기(animate는 트랜스폼 적용안됨)
+                $(".inj").css({
+                    transform: "rotate(-150deg)", // 반시계방향회전
+                    transition: ".5s .5s", // 0.5초후 0.5초간 애니
+                    zIndex: "9999", // 미니언즈 보다 위
+                }); //////// css ///////
+
+                // 미니언즈로 다시 태어나다!(1초후)
+                setTimeout(() => {
+                    // 이미지변경
+                    mi.find("img")
+                        .attr("src", "images/m2.png")
+                        .css({ filter: "grayscale(0)" }); //다시컬러!
+                    // 대사
+                    msg.html("이제 조그만 더<br>가면 탈출이닷!")
+                        .css({ left: "-150%" })
+                        .fadeIn(200);
+                        // 주사기 없애기
+                        $(".inj").hide();
+                        // 다음버튼 보이기
+                        $(this).next().slideDown(300);
+                }, 1000);
+            };
 
             // 액션함수호출
-            actMini(this, 7, fn);
+            actMini(this, 2, fn);
         })
         // 10. 3번방으로! 버튼 클릭시 ///////////////
         .next()
         .click(function () {
             // 이동후 함수
-            let fn = () => {};
+            let fn = () => {
+                // 메시지 보이기
+                msg.html("어서 윗층으로 가자")
+                .fadeIn(200);
+
+                // 다음버튼 보이기
+                $(this).next().slideDown(300);
+            };
 
             // 액션함수호출
-            actMini(this, 7, fn);
+            actMini(this, 3, fn);
         })
         // 11. 1번방으로! 버튼 클릭시 ///////////////
         .next()
         .click(function () {
             // 이동후 함수
-            let fn = () => {};
+            let fn = () => {
+                // 메시지 보이기
+                msg.html("이제 곧 탈출이다.")
+                .fadeIn(200);
+
+                // 다음버튼 보이기
+                $(this).next().slideDown(300);
+            };
 
             // 액션함수호출
-            actMini(this, 7, fn);
+            actMini(this, 1, fn);
         })
         // 12. 헬기를 호출! 버튼 클릭시 ///////////////
         .next()
         .click(function () {
             // 이동후 함수
-            let fn = () => {};
+            let fn = () => {
+                // 메시지 보이기
+                msg.html("도와줘요!")
+                .fadeIn(200);
+                // 1번방 단체좀비들 달려듬
+                bd.eq(1).find(".mz")
+                .fadeIn(300)
+                .animate({
+                    right : bd.eq(1).width() + "px"
+                },3000,"easeInExpo")
+            
+                // 헬기등장
+                $(".heli")
+                .animate({
+                    left : "20%"
+                }, 4000,"easeOutBack",
+                function(){ // 여기서 this는 . heli
+                    // 헬기도착후 탑승이미지 변경
+                    $(this).attr("src","images/heli2.png");
+                    // 원본 미니언즈는 사라짐
+                    mi.hide();
+                },4000,"ease")
+                .delay(500) // 0.5초 쉬었다가
+                .animate({
+                    left : "70%"
+                },4000,"easeInOutCirc",function(){ // 끝쪽에서 조종사 좀비로
+                    $(this).attr("src","images/heli3.png");
+                })
+                .delay(300)
+                .animate({ // 아주 천천히 오른쪽 바깥으로 나감
+                    left : "100%"
+                }, 10000, "linear", // 10초간 등속도
+                ()=>{
+                    // 최종 마무리 구역
+
+                    // 간판 떨어트리기
+                    // 1단계 ㅣ 중간까지 떨어짐
+                    // > 간판에 class "on"주기
+                    let tit = $(".tit");
+                    tit.addClass("on");
+                    setTimeout(
+                        // -> 간판에 class "on2"주기
+                        ()=>tit.addClass("on2")
+                    , 3000);
+                    // 빌딩 무너뜨리기
+                    // 간판 떨어진 후 실행 (6초)
+                    setTimeout(()=>{
+                        bd.parent().addClass("on")
+                        // parent() 부모요소인 . building
+                    }, 6000) 
+                })
+            };
 
             // 액션함수호출
-            actMini(this, 7, fn);
+            actMini(this, 0, fn);
+
         });
+        // 간판에 마우스 오버시/아웃시 색상변경하기
+        // hover(함수1,함수2)
+        // - 함수1은 오버시, 함수 2는 아웃시 실행
+        $(".tit").hover(
+            function(){ // over
+                $(this).css({
+                    backgroundColor : "blue",
+                    color : "cyan"
+                }); // css
+            },
+            function(){ // over
+                $(this).css({
+                    backgroundColor : "pink",
+                    color : "yellow"
+                }); // css
+            },
+        )
 }); /////////////// jQB ////////////////////
