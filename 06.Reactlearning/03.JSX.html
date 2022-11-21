@@ -2,9 +2,8 @@
 <html lang="ko">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>02.HTML출력</title>
+        <title>03.JSX</title>
 
         <!-- 1.리액트 기본 라이브러리 -->
         <script
@@ -19,21 +18,29 @@
         <!-- 3.리액트 바벨 라이브러리 -->
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-        <!-- 나의 JSX -->
-        <script src="./js/02.HTML출력.jsx" type="text/babel"></script>
+        <!-- 03.JSX.jsx 파일 불러오기 -->
+        <script src="./js/03.JSX.jsx" type="text/babel"></script>
         <style>
-            h1{
+            .myclass{
+                color: red;
+                border: 4px dotted skyblue;
                 text-align: center;
-            }
-            table{
-                font-size: 24px;
-                margin: 0 auto;
-                border: 4px double blue;
-                padding: 15px;
             }
         </style>
     </head>
     <body>
-        <div id="root"></div>
+        <div id="root">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+
+
     </body>
 </html>
