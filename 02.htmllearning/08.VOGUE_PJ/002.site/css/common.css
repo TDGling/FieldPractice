@@ -173,6 +173,9 @@ https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
     color: red;
 }
 
+/******* 501px 이상에서만 적용하기 *******/
+@media screen and (max-width: 501px) {
+
 /************ 슬림 상단 디자인 변경 ************/
 /* #top 최상위 박스에 클래스 "on"을 줘서 적용! */
 
@@ -235,6 +238,8 @@ https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor */
 /* GNB a요소 */
 #top.on .gnb a {
     color: #333;
+}
+
 }
 
 /* 미디어쿼리 (GNB마진left 수치적용)
